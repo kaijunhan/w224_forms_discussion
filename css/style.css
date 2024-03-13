@@ -1,0 +1,93 @@
+  /* Create an accessible color palette using var()function */
+  /* https://www.w3schools.com/css/css3_variables.asp */
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    width:70%;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    background: #c44601;
+  }
+
+  .radio {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    /* background: #575294; */
+    color: #ffffff;
+  }
+
+  #name {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #ffffff;
+    color: #000000;
+  }
+
+  #message {
+    width: 100%;
+    padding: 10px;
+    resize: vertical;
+  }
+
+  input,
+  textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #000000;
+  }
+
+
+  .reset{
+    width: 100%;
+    height: 2em;
+  }
+
+  .right {
+      grid-column-start: 2;
+      grid-column-end: 3;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    z-index: -1;
+    /* Keeps it behind other content until focused */
+    transition: opacity 0.3s, z-index 0s 0.3s;
+    /* Smooth transition for opacity, delays z-index to after fade */
+  }
+
+  .skip-link:focus {
+    opacity: 1;
+    z-index: 1000;
+    /* Ensures it is above other content when focused */
+    transition: opacity 0.3s;
+    /* Immediate transition for opacity */
+    position: static;
+  }
